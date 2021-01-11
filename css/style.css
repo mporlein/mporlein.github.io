@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+:root {
+  --primary: #fff;
+  --grey: #d8d7d7;
+  --xs: 4px;
+  --s: 8px;
+  --m: 16px;
+  --l: 24px;
+  --xl: 48px;
+  --xxl: 64px;
+}
+
+body {
+  margin: 16;
+  padding: 16;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 1000;
+}
+
+form {
+  flex-grow: 1;
+}
+
+html {
+    font-family: 'Source Code Pro', monospace;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 1rem;
+    height: 100vh;
+    scroll-snap-align: start;
+    text-align: left;
+    position: relative; 
+}
+
+.title-Page {
+    color: var(--primary);
+    margin: var(--xl);
+    padding: var(--l);
+    font-size: var(--xl);
+}
+
+.about-MeTitle {
+    color: var(--primary);
+    margin: var(--xl);
+    padding: var(--l);
+    font-size: var(--l);
+    line-height: 2;
+}
+
+.about-Page {
+    color: midnightblue;
+    margin: var(--l);
+    padding: var(--l);
+    font-size: var(--xl);
+}
+
+.about-MeText {
+    color: midnightblue;
+    margin: var(--xl);
+    padding: var(--l);
+    font-size: var(--l);
+    line-height: 2;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
