@@ -1,0 +1,280 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Maximilian Porlein</title>
+    <meta name="description" content="The personal portfolio of Maximilian Porlein">
+    <meta name="author" content="Maximilian Porlein">
+    <meta name="viewport" content="user-scalable=yes">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css">
+</head>
+
+<body>
+    <section style="background-color:midnightblue;">
+        <div class="topnav">
+            <a href="contact.html">Contact</a>            
+            <a href="skills_and_interests.html">Skills and Interests</a>
+            <a class="active" href="travel.html">Travel</a>
+            <a href="experience.html">Experience</a>
+            <a href="index.html">Home</a>
+        </div>
+        <div class="about-MeTitle">
+
+        </div>
+        <footer>
+            <div class="footer">
+                <p>Copyright &copy; 2025 Maximilian Porlein. <a style="text-decoration:underline;color: white;" href="https://github.com/mporlein/personal-website/">Source Code.</a></p>
+            </div>
+        </footer>
+    </section>  
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Maximilian Porlein</title>
+    <meta name="description" content="The personal portfolio of Maximilian Porlein">
+    <meta name="author" content="Maximilian Porlein">
+    <meta name="viewport" content="user-scalable=yes">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css">
+    
+    <style>
+        /* Additional styles for the map */
+        /* .map-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        } */
+
+        .map-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: transparent; /* Remove white background */
+            border-radius: 10px;
+        }
+        
+        .map-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+            font-family: 'Source Code Pro', monospace;
+        }
+        
+        #world-map {
+            width: 100%;
+            height: 500px;
+            margin: 20px 0;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+        } */
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary); /* White text to match your theme */
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        
+        .visited {
+            background-color: #2E8B57;
+        }
+        
+        .unvisited {
+            background-color: #E6E6FA;
+        }
+        
+        /* .stats {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        } */
+
+        .stats {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(255,255,255,0.1); /* Semi-transparent white */
+            border-radius: 8px;
+            color: var(--primary); /* White text */
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2E8B57;
+        }
+    </style>
+</head>
+
+<body>
+    <section style="background-color:midnightblue;">
+        <div class="topnav">
+            <a href="contact.html">Contact</a>            
+            <a href="skills_and_interests.html">Skills and Interests</a>
+            <a class="active" href="travel.html">Travel</a>
+            <a href="experience.html">Experience</a>
+            <a href="index.html">Home</a>
+        </div>
+        
+        <div class="about-MeTitle">
+            <p>Countries I've been to</p>
+        </div>
+        
+        <!-- Map Section -->
+        <div class="map-container">
+            
+            <!-- This is where the map will appear -->
+            <div id="world-map"></div>
+            
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-number" id="country-count">0</div>
+                <div>Countries visited</div>
+            </div>
+        </div>
+
+        <div class="travel-links">
+            <h3 class="links-title">See also</h3>
+            <div class="links-container">
+                <a href="states.html" class="travel-link">
+                    <div class="link-content">
+                        <h4>US states I've been to</h4>
+                    </div>
+                </a>
+                <a href="restaurants.html" class="travel-link">
+                    <div class="link-content">
+                        <h4>My top 10 restaurants</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer">
+                <p>Copyright &copy; 2025 Maximilian Porlein. <a style="text-decoration:underline;color: white;" href="https://github.com/mporlein/personal-website/">Source Code.</a></p>
+            </div>
+        </footer>
+    </section>  
+
+    <!-- JavaScript goes at the very bottom, before closing </body> -->
+    <!-- jQuery (required for JQVMap) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JQVMap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js"></script> 
+
+    <script>
+        $(document).ready(function() {
+            // CUSTOMIZE THIS: Add your visited countries using 2-letter country codes
+            var visitedCountries = {
+                'us': '#2E8B57',    // United States
+                'de': '#2E8B57',    // Germany (since your name suggests German connection?)
+                'fr': '#2E8B57',    // France
+                'gb': '#2E8B57',    // United Kingdom
+                'it': '#2E8B57',    // Italy
+                'at': '#2E8B57',
+                'au': '#2E8B57',
+                'nz': '#2E8B57',
+                'mx': '#2E8B57',
+                'pe': '#2E8B57',
+                'hn': '#2E8B57',
+                'is': '#2E8B57',
+                'za': '#2E8B57',
+                'ru': '#2E8B57',
+                'ch': '#2E8B57',
+                'tw': '#2E8B57',
+                'cn': '#2E8B57',
+                'bb': '#2E8B57',
+                'ca': '#2E8B57',
+                'li': '#2E8B57',
+                'sg': '#2E8B57',
+                'th': '#2E8B57',
+                // Add more countries you've visited here
+                // Format: 'country-code': '#2E8B57',
+            };
+
+            // Initialize the map
+            $('#world-map').vectorMap({
+                map: 'world_en',
+                backgroundColor: '#ffffff',
+                borderColor: '#818181',
+                borderOpacity: 0.25,
+                borderWidth: 1,
+                color: '#E6E6FA',  // Default color for unvisited countries
+                colors: visitedCountries,
+                enableZoom: true,
+                hoverColor: '#FFD700',  // Gold color on hover
+                hoverOpacity: null,
+                normalizeFunction: 'linear',
+                scaleColors: ['#b6d6ff', '#005ace'],
+                selectedColor: '#c9dfaf',
+                selectedRegions: [],
+                showTooltip: true,
+                
+                // Custom tooltip content
+                onRegionTipShow: function(event, label, code) {
+                    if (visitedCountries[code]) {
+                        label.html(
+                            '<div style="background: #333; color: white; padding: 8px 12px; border-radius: 4px; font-size: 14px;">' +
+                            '<strong>' + label.html() + '</strong><br>' +
+                            '<span style="color: #90EE90;">✓ Visited</span>' +
+                            '</div>'
+                        );
+                    } else {
+                        label.html(
+                            '<div style="background: #333; color: white; padding: 8px 12px; border-radius: 4px; font-size: 14px;">' +
+                            '<strong>' + label.html() + '</strong><br>' +
+                            '<span style="color: #ccc;">Not visited yet</span>' +
+                            '</div>'
+                        );
+                    }
+                },
+                
+                // Handle clicks on countries
+                onRegionClick: function(event, code, region) {
+                    if (visitedCountries[code]) {
+                        alert('I visited ' + region + '! 🌍');
+                        // You could replace this with more sophisticated interactions
+                    }
+                }
+            });
+
+            // Update the counter
+            $('#country-count').text(Object.keys(visitedCountries).length);
+        });
+    </script>
+</body>
+</html>

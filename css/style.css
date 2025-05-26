@@ -31,12 +31,19 @@ html {
     scroll-behavior: smooth; */
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 section {
     padding: 0.5rem;
-    height: 100vh;
+    min-height: 100vh;
     /* scroll-snap-align: start; */
     text-align: left;
     position: relative; 
+    padding-bottom: 80px; /* Add space for the footer */
 }
 
 .title-Page {
@@ -95,14 +102,35 @@ section {
 
 .footer {
     position: fixed;
-    left: 0;
     bottom: 1%;
-    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 12px; /* Match your body margin */
     background-color: black;
     color: white;
     text-align: center;
-    /* padding: 14px 16px; */
-  }
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+}
+
+.footer a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
 
 .collapsible {
     background-color: #eee;
@@ -151,3 +179,61 @@ section {
     background-color: #fff;
     color: black;
   }
+
+
+
+
+
+
+
+.travel-links {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.links-title {
+    color: var(--primary);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.links-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.travel-link {
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--primary);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.travel-link:hover {
+    background-color: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+}
+
+.link-content h4 {
+    margin: 0 0 10px 0;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.2em;
+}
+
+.link-content p {
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+    opacity: 0.9;
+    line-height: 1.4;
+}
